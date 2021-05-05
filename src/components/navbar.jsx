@@ -1,44 +1,39 @@
-import React, { Component } from "react";
+import React from "react";
 import logo from "../logo.svg";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import { Button, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 
-import { useSpring, animated } from "react-spring";
+import { animated } from "react-spring";
 
 //Custom modules
 import modules from "../modules";
+import styled, { keyframes } from "styled-components";
 
-// return (
-//   <animated.div
-//     style={{
-//       transform: rotateZ.interpolate((z) => `rotateZ(${z}deg)`),
-//     }}
-//   />
-// )
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
 
-const NaviBar = ({}) => {
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const BannerLogo = styled.img`
+  width: 40px;
+  height: 40px;
+  classname: d-inline-block align-top;
+  alt: React logo;
+  animation: ${rotate} 30s linear infinite;
+`;
+
+const NaviBar = () => {
   const [currentTab, setCurrentTab] = useState("dashboard");
-  // //   const { rotateZ } = useSpring({
-  // //     from: {
-  // //       rotateZ: 0,
-  // //     },
-  // //     to: {
-  // //       rotateZ: 360,
-  // //     },
-  //   });
   return (
     <Navbar className="bg-dark" variant="dark" expand="lg">
       <Navbar.Brand href="/">
-        <animated.span>
-          <img
-            src={logo}
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-            alt="React logo"
-          />
-        </animated.span>
+        <BannerLogo src={logo} />
         React-Playground
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
