@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import GitUserInformation from "./components/GitUserInformation";
-import List from "./components/List";
-import ListLoader from "./components/ListLoader";
-
-import axios from "axios";
 
 const GrandParentContainer = styled.div`
   display: table;
@@ -44,15 +40,19 @@ const MyTitle = styled.h1`
   margin-top: 1em;
 `;
 
+const Description = styled.div`
+  margin-bottom: 1em;
+`;
+
 const AxiosDemo = () => {
   //Axios Demo uses the classic class component mounting method to render the List
 
   return (
     <React.Fragment>
-      <div>Axios Demo Module</div>
-      <div>
-        <mark>This is a demo to fetch data coming from github api call.</mark>
-      </div>
+      <h2>Axios Demo Module</h2>
+      <Description>
+        This is a demo to fetch data coming from github api call.
+      </Description>
       <GrandParentContainer>
         <ParentContainer>
           <FormBody>

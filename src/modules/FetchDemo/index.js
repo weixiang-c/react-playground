@@ -42,6 +42,10 @@ const MyTitle = styled.h1`
   margin-top: 1em;
 `;
 
+const Description = styled.div`
+  margin-bottom: 1em;
+`;
+
 const FetchDemo = () => {
   //The fetch demo uses react hook to invoke the components
 
@@ -53,6 +57,7 @@ const FetchDemo = () => {
   });
 
   //Utilizing higher order component
+  //Use effect is the invoke function to invoke the ref function
   useEffect(() => {
     setAppState({ loading: true });
     const apiUrl = `https://api.github.com/users/weixiang-c/repos`;
@@ -65,10 +70,10 @@ const FetchDemo = () => {
 
   return (
     <React.Fragment>
-      <div>Fetch Demo Module</div>
-      <div>
-        <mark>This is a demo to fetch data coming from github api call.</mark>
-      </div>
+      <h2>Fetch Demo Module</h2>
+      <Description>
+        This is a demo to fetch data coming from github api call.
+      </Description>
       <GrandParentContainer>
         <ParentContainer>
           <FormBody>

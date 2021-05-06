@@ -5,12 +5,15 @@ const ModuleGrandParentContainer = styled.div``;
 
 const ModuleParentContainer = styled.div``;
 
-const ModuleWrapper = () => {
-  return (
-    <ModuleGrandParentContainer>
-      <ModuleParentContainer />
-    </ModuleGrandParentContainer>
-  );
-};
+// const ModuleWrapper = () => {
+//   return (
+//     <ModuleGrandParentContainer>
+//       <ModuleParentContainer />
+//     </ModuleGrandParentContainer>
+//   );
+// };
 
-export default ModuleWrapper;
+export default {
+  GrandParentContainer,
+  ParentContainer,
+};

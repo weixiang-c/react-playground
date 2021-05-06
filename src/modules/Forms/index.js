@@ -23,10 +23,14 @@ const FormBody = styled.div`
   margin-bottom: 5em;
 `;
 
+const Description = styled.div`
+  margin-bottom: 1em;
+`;
+
 const Forms = () => {
   return (
     <React.Fragment>
-      <div>Form Module</div>
+      <h2>Form Module</h2>
       <FormBody>
         <GrandParentContainer>
           <ParentContainer>
